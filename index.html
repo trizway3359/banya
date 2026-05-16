@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>반야심경 현대 해설 — 원뜻과 현대적 해석</title>
+  <meta name="description" content="반야심경의 원래 의미와 현대적 해석을 불자와 현대인이 쉽게 이해하도록 구조화한 HTML 해설문">
+  <style>
+    :root {
+      --bg: #fbf8f0;
+      --paper: #fffdf8;
+      --paper-2: #fff7e5;
+      --ink: #25211b;
+      --muted: #6f6457;
+      --line: #e8dbc5;
+      --accent: #8b4b2b;
+      --accent-2: #b98546;
+      --deep: #29211d;
+      --green: #2f6048;
+      --blue: #30556f;
+      --red: #8c3a35;
+      --shadow: 0 18px 50px rgba(53, 36, 18, 0.12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(185, 133, 70, .18), transparent 34rem),
+        radial-gradient(circle at 92% 10%, rgba(47, 96, 72, .13), transparent 30rem),
+        linear-gradient(180deg, #fbf4e7 0%, var(--bg) 28%, #f9f2e7 100%);
+      line-height: 1.76;
+      word-break: keep-all;
+    }
+
+    a { color: var(--accent); text-decoration-thickness: .08em; text-underline-offset: .16em; }
+    a:hover { color: #5e2f1d; }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+    header.hero {
+      padding: 64px 0 42px;
+      border-bottom: 1px solid rgba(139,75,43,.18);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "般若心經";
+      position: absolute;
+      right: 4vw;
+      top: 28px;
+      font-size: clamp(4rem, 14vw, 10rem);
+      color: rgba(139, 75, 43, .06);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid rgba(139,75,43,.25);
+      border-radius: 999px;
+      background: rgba(255,255,255,.58);
+      color: var(--accent);
+      font-size: .92rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 5vw, 4.6rem);
+      line-height: 1.08;
+      letter-spacing: -.06em;
+    }
+    .lead {
+      max-width: 880px;
+      font-size: clamp(1.05rem, 2vw, 1.34rem);
+      color: #4d4439;
+      margin: 0 0 24px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 24px;
+      align-items: end;
+      position: relative;
+      z-index: 1;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 0; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(139,75,43,.18);
+      color: #4f4034;
+      font-size: .9rem;
+    }
+    .hero-card {
+      background: rgba(255,253,248,.84);
+      border: 1px solid rgba(139,75,43,.16);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    .hero-card h2 { margin-top: 0; font-size: 1.15rem; }
+    .hero-card p { margin-bottom: 0; color: var(--muted); }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 275px 1fr;
+      gap: 28px;
+      padding: 28px 0 80px;
+    }
+    nav.toc {
+      position: sticky;
+      top: 16px;
+      align-self: start;
+      max-height: calc(100vh - 32px);
+      overflow: auto;
+      padding: 18px;
+      border: 1px solid rgba(139,75,43,.18);
+      border-radius: 20px;
+      background: rgba(255,253,248,.74);
+      box-shadow: 0 12px 28px rgba(45, 29, 13, .08);
+    }
+    .toc h2 { margin: 0 0 10px; font-size: 1rem; }
+    .toc a {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #4c4036;
+      font-size: .95rem;
+    }
+    .toc a:hover { background: rgba(185,133,70,.13); color: var(--accent); }
+
+    main { min-width: 0; }
+    section {
+      scroll-margin-top: 24px;
+      background: rgba(255,253,248,.86);
+      border: 1px solid rgba(139,75,43,.15);
+      border-radius: var(--radius);
+      padding: clamp(22px, 3vw, 36px);
+      margin-bottom: 22px;
+      box-shadow: 0 14px 38px rgba(53, 36, 18, 0.08);
+    }
+    section.alt { background: rgba(255,247,229,.82); }
+    h2 {
+      font-size: clamp(1.55rem, 2.7vw, 2.15rem);
+      line-height: 1.24;
+      letter-spacing: -.04em;
+      margin: 0 0 18px;
+    }
+    h3 {
+      font-size: 1.25rem;
+      margin: 26px 0 10px;
+      letter-spacing: -.03em;
+    }
+    h4 { font-size: 1.05rem; margin: 18px 0 8px; }
+    p { margin: 0 0 13px; }
+    .muted { color: var(--muted); }
+    .small { font-size: .92rem; }
+    .center { text-align: center; }
+    .divider { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+
+    .notice {
+      border-radius: 18px;
+      border: 1px solid rgba(140, 58, 53, .22);
+      background: linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,247,229,.75));
+      padding: 18px 18px 16px;
+      margin: 18px 0;
+    }
+    .notice strong { color: var(--red); }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .card {
+      border: 1px solid rgba(139,75,43,.16);
+      border-radius: 18px;
+      padding: 18px;
+      background: rgba(255,255,255,.62);
+    }
+    .card h3, .card h4 { margin-top: 0; }
+    .card p:last-child { margin-bottom: 0; }
+    .tag {
+      display: inline-block;
+      font-size: .78rem;
+      font-weight: 800;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 999px;
+      padding: 3px 9px;
+      margin-bottom: 10px;
+    }
+    .tag.green { background: var(--green); }
+    .tag.blue { background: var(--blue); }
+    .tag.red { background: var(--red); }
+
+    .sutra-box {
+      border-radius: 22px;
+      border: 1px solid rgba(139,75,43,.22);
+      background: linear-gradient(135deg, rgba(255,255,255,.72), rgba(255,248,232,.9));
+      padding: 22px;
+      margin: 18px 0;
+      position: relative;
+    }
+    .sutra-box .han {
+      font-family: "Noto Serif CJK KR", "Source Han Serif KR", "Nanum Myeongjo", serif;
+      font-size: clamp(1.25rem, 2.3vw, 1.75rem);
+      line-height: 1.95;
+      letter-spacing: .02em;
+      color: #3b2d26;
+    }
+    .callout {
+      border-left: 5px solid var(--accent-2);
+      padding: 12px 16px;
+      background: rgba(255,247,229,.8);
+      border-radius: 0 16px 16px 0;
+      margin: 16px 0;
+    }
+    .quote {
+      font-size: 1.12rem;
+      color: #3f352d;
+      background: rgba(47, 96, 72, .08);
+      border: 1px solid rgba(47,96,72,.18);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 8px;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.62);
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 13px 14px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: rgba(139,75,43,.08);
+      color: #413027;
+      font-weight: 800;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .nowrap { white-space: nowrap; }
+
+    details {
+      border: 1px solid rgba(139,75,43,.17);
+      background: rgba(255,255,255,.62);
+      border-radius: 16px;
+      padding: 0;
+      margin: 12px 0;
+      overflow: hidden;
+    }
+    summary {
+      cursor: pointer;
+      padding: 15px 18px;
+      font-weight: 800;
+      color: #3f332b;
+      background: rgba(185,133,70,.08);
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "＋"; margin-right: 9px; color: var(--accent); font-weight: 900; }
+    details[open] summary::before { content: "－"; }
+    .detail-body { padding: 16px 18px 18px; }
+    .han-line {
+      font-family: "Noto Serif CJK KR", "Source Han Serif KR", "Nanum Myeongjo", serif;
+      font-size: 1.15rem;
+      color: #4b352a;
+      margin-bottom: 8px;
+    }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 14px; }
+    .pill {
+      background: rgba(47,96,72,.08);
+      color: var(--green);
+      border: 1px solid rgba(47,96,72,.18);
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .practice { counter-reset: day; }
+    .practice .day { position: relative; padding-left: 52px; min-height: 44px; }
+    .practice .day::before {
+      counter-increment: day;
+      content: counter(day);
+      position: absolute;
+      left: 0;
+      top: 3px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .source-list li { margin-bottom: 10px; }
+    .footnote { font-size: .88rem; color: var(--muted); }
+
+    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+    button {
+      border: 1px solid rgba(139,75,43,.24);
+      background: #fffaf0;
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    button:hover { background: #fff2d8; }
+
+    footer { padding: 34px 0 54px; color: var(--muted); text-align: center; border-top: 1px solid rgba(139,75,43,.18); }
+
+    @media (max-width: 960px) {
+      .hero-grid, .layout, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      nav.toc { position: relative; top: 0; max-height: none; }
+      .toc-links { columns: 2; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 20px, 1180px); }
+      header.hero { padding: 42px 0 26px; }
+      section { padding: 20px; }
+      .toc-links { columns: 1; }
+      th, td { display: block; width: 100%; }
+      th { border-bottom: 0; }
+      tr { display: block; border-bottom: 1px solid var(--line); }
+      tr:last-child { border-bottom: 0; }
+    }
+
+    @media print {
+      body { background: white; }
+      nav.toc, .toolbar, button { display: none !important; }
+      .layout { display: block; padding: 0; }
+      section { break-inside: avoid; box-shadow: none; border-color: #ddd; }
+      a { color: #000; }
+      details { break-inside: avoid; }
+      details:not([open]) .detail-body { display: block; }
+      details:not([open]) summary::before { content: ""; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">현대인을 위한 반야심경 구조 해설</div>
+        <h1>반야심경의 원뜻과 현대적 의미</h1>
+        <p class="lead">“색즉시공”을 허무주의가 아니라, 모든 존재가 관계와 조건 속에서 드러난다는 <strong>해방의 지혜</strong>로 이해하도록 돕는 체계적 안내서입니다. 불자들이 알아야 할 핵심 교리, 부처님이 전하고자 한 메시지, 현대 삶과 물리학적 비유를 분리해 친절하게 설명합니다.</p>
+        <div class="chips">
+          <span class="chip">작성일: 2026-05-16</span>
+          <span class="chip">대상: 초심자 · 불자 · 현대인</span>
+          <span class="chip">핵심: 공空 · 연기緣起 · 자비慈悲 · 무소득無所得</span>
+          <span class="chip">형식: 교육·법회·강의용 HTML</span>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h2>먼저 알아둘 점</h2>
+        <p>이 문서는 공개된 전통·학술·과학 자료를 바탕으로 만든 <strong>검수용 고급 초안</strong>입니다. 실제로 특정 고승·학자에게 최종 검증을 받았다는 표현은 넣지 않았습니다. 법회 배포나 출판 전에는 소속 종단·법사·불교학 연구자의 최종 검토를 권합니다.</p>
+      </aside>
+    </div>
+  </header>
+
+  <div class="wrap layout">
+    <nav class="toc" aria-label="목차">
+      <h2>목차</h2>
+      <div class="toc-links">
+        <a href="#summary">1. 한눈에 보는 핵심</a>
+        <a href="#orientation">2. 제목과 배경</a>
+        <a href="#structure">3. 전체 구조</a>
+        <a href="#sutra">4. 원문과 구절 해설</a>
+        <a href="#doctrine">5. 불자가 알아야 할 교리</a>
+        <a href="#buddha-message">6. 부처님의 메시지</a>
+        <a href="#modern-life">7. 현대 삶의 해석</a>
+        <a href="#physics">8. 물리학·양자역학 비유</a>
+        <a href="#practice">9. 실천법</a>
+        <a href="#faq">10. 자주 하는 질문</a>
+        <a href="#review">11. 검수 체크리스트</a>
+        <a href="#sources">12. 참고 자료</a>
+      </div>
+    </nav>
+
+    <main>
+      <section id="summary">
+        <h2>1. 한눈에 보는 핵심</h2>
+        <div class="notice">
+          <strong>핵심 한 문장:</strong> 반야심경은 “나와 세계가 고정된 실체로 존재한다”는 착각을 꿰뚫어 보고, 집착과 두려움에서 벗어나 자비롭게 사는 지혜를 가르칩니다.
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <span class="tag">원뜻</span>
+            <h3>공은 “없다”가 아니다</h3>
+            <p>공空은 사물과 마음이 독립적·영원한 본질을 갖고 있지 않다는 뜻입니다. 따라서 공은 허무가 아니라 <strong>연기緣起, 즉 조건에 의해 함께 일어남</strong>입니다.</p>
+          </div>
+          <div class="card">
+            <span class="tag green">수행</span>
+            <h3>오온을 비추어 본다</h3>
+            <p>몸, 느낌, 생각, 습관적 반응, 의식이 모두 “나 자체”가 아니라 조건의 흐름임을 관찰합니다. 이 관찰이 집착을 부드럽게 풀어 줍니다.</p>
+          </div>
+          <div class="card">
+            <span class="tag blue">현대</span>
+            <h3>고정된 정체성에서 해방</h3>
+            <p>직업, 성과, 관계, 감정, SNS 속 이미지가 전부 “나의 본질”은 아닙니다. 이 사실을 알면 실패와 불안에 덜 휘둘리고, 관계는 더 자비로워집니다.</p>
+          </div>
+        </div>
+
+        <h3>반야심경을 읽는 네 개의 문</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>문</th>
+              <th>질문</th>
+              <th>반야심경의 답</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="nowrap"><strong>존재의 문</strong></td>
+              <td>나는 정말 고정된 “나”인가?</td>
+              <td>나라고 부르는 것은 오온이 조건 따라 모인 흐름입니다. 고정된 핵심을 찾으려 하면 잡히지 않습니다.</td>
+            </tr>
+            <tr>
+              <td class="nowrap"><strong>고통의 문</strong></td>
+              <td>왜 괴로운가?</td>
+              <td>변하는 것을 변하지 않기를 바라며 붙잡기 때문입니다. 공을 보면 집착이 약해지고 고통도 가벼워집니다.</td>
+            </tr>
+            <tr>
+              <td class="nowrap"><strong>지혜의 문</strong></td>
+              <td>깨달음은 무엇을 얻는 일인가?</td>
+              <td>얻을 대상이 따로 있는 것이 아니라, 잘못 붙잡던 방식이 내려놓아지는 일입니다. 그래서 “무소득”입니다.</td>
+            </tr>
+            <tr>
+              <td class="nowrap"><strong>자비의 문</strong></td>
+              <td>공을 알면 삶이 차가워지는가?</td>
+              <td>반대로 더 따뜻해집니다. 나와 남이 완전히 분리된 실체가 아님을 알면, 타인의 고통을 외면하기 어렵습니다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="orientation" class="alt">
+        <h2>2. 제목과 배경: “마하반야바라밀다심경”이란?</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>제목 풀이</h3>
+            <table>
+              <tbody>
+                <tr><th>마하 摩訶</th><td>크다, 위대하다. 단순히 양이 큰 것이 아니라 깊고 넓다는 뜻입니다.</td></tr>
+                <tr><th>반야 般若</th><td>분별 지식이 아니라, 집착을 끊는 통찰의 지혜입니다.</td></tr>
+                <tr><th>바라밀다 波羅蜜多</th><td>저 언덕에 이름, 완성, 완전한 성취. 괴로움의 이쪽 언덕에서 자유의 저쪽 언덕으로 건너감입니다.</td></tr>
+                <tr><th>심 心</th><td>핵심, 정수. 방대한 반야부 경전의 심장부라는 뜻입니다.</td></tr>
+                <tr><th>경 經</th><td>부처님의 가르침을 담은 경전입니다.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card">
+            <h3>등장 인물의 의미</h3>
+            <p><strong>관자재보살</strong>은 지혜와 자비를 함께 실천하는 보살입니다. “세상을 자유롭게 관찰한다”는 이름처럼, 현상을 있는 그대로 비추어 보는 수행자의 모습을 상징합니다.</p>
+            <p><strong>사리자</strong>는 지혜가 뛰어난 제자로, 분석적 지성을 대표합니다. 반야심경은 이 지성이 궁극의 지혜 앞에서 어떻게 더 깊어지는지를 보여 줍니다.</p>
+            <p><strong>부처님</strong>은 긴 판본에서 법회의 장을 열고 마지막에 가르침을 인정합니다. 이는 반야심경이 단순한 철학 명제가 아니라 수행의 길임을 나타냅니다.</p>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>읽는 법:</strong> 반야심경은 “세계는 없다”는 선언문이 아니라, “세계와 나를 고정된 실체로 붙잡는 방식이 잘못되었다”는 수행 안내문입니다. 이 차이를 놓치면 공은 곧 허무주의로 오해됩니다.
+        </div>
+      </section>
+
+      <section id="structure">
+        <h2>3. 반야심경 전체 구조</h2>
+        <p class="muted">짧은 경전이지만 내부 구조는 매우 정교합니다. 아래 순서로 읽으면 난해한 부정문들이 하나의 수행 흐름으로 보입니다.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>단계</th>
+              <th>경전의 흐름</th>
+              <th>핵심 의미</th>
+              <th>현대적 이해</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>관자재보살이 깊은 반야바라밀다를 행함</td><td>단순한 생각이 아니라 깊은 수행 상태에서 비추어 봄</td><td>머리로 아는 것을 넘어 삶에서 관찰하기</td></tr>
+            <tr><td>2</td><td>오온이 모두 공함을 봄</td><td>몸과 마음의 구성요소에 고정된 자아가 없음</td><td>감정·역할·기억을 “나 자체”로 굳히지 않기</td></tr>
+            <tr><td>3</td><td>색즉시공 공즉시색</td><td>현상과 공은 분리되지 않음</td><td>삶을 부정하지 않고, 삶 속에서 자유를 봄</td></tr>
+            <tr><td>4</td><td>불생불멸·불구부정·부증불감</td><td>궁극의 관점에서는 대립 개념이 절대적이지 않음</td><td>성공/실패, 순수/불순, 증가/감소의 이분법 완화</td></tr>
+            <tr><td>5</td><td>무색·무수상행식, 무안이비설신의...</td><td>경험 세계의 분석 범주도 실체화하지 말라는 뜻</td><td>내 관점과 분류가 세계 그 자체라고 착각하지 않기</td></tr>
+            <tr><td>6</td><td>무무명·무고집멸도·무지역무득</td><td>교리마저 붙잡을 대상이 아님</td><td>신념과 수행 성취를 새 자아로 만들지 않기</td></tr>
+            <tr><td>7</td><td>심무가애·무유공포·구경열반</td><td>걸림이 없어 두려움이 줄고 평화에 이름</td><td>통제 강박, 인정 욕구, 죽음 공포를 부드럽게 놓기</td></tr>
+            <tr><td>8</td><td>아제 아제 바라아제...</td><td>지혜를 몸과 마음에 새기는 수행의 언어</td><td>이해에서 실천으로, 실천에서 체험으로 건너가기</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sutra" class="alt">
+        <h2>4. 원문과 구절별 친절 해설</h2>
+        <p>아래 한문 원문은 널리 독송되는 현장玄奘 계통의 짧은 판본을 기준으로 정리했습니다. 각 항목의 “쉬운 풀이”는 공식 번역문을 그대로 복제한 것이 아니라, 현대 독자가 이해하기 쉽도록 풀어 쓴 설명입니다.</p>
+        <div class="toolbar">
+          <button type="button" onclick="openAllDetails(true)">모든 해설 펼치기</button>
+          <button type="button" onclick="openAllDetails(false)">모든 해설 접기</button>
+        </div>
+        <div class="sutra-box">
+          <div class="han">
+            觀自在菩薩 行深般若波羅蜜多時 照見五蘊皆空 度一切苦厄<br>
+            舍利子 色不異空 空不異色 色即是空 空即是色 受想行識 亦復如是<br>
+            舍利子 是諸法空相 不生不滅 不垢不淨 不增不減<br>
+            是故空中 無色 無受想行識 無眼耳鼻舌身意 無色聲香味觸法<br>
+            無眼界 乃至 無意識界 無無明 亦無無明盡 乃至 無老死 亦無老死盡<br>
+            無苦集滅道 無智亦無得 以無所得故<br>
+            菩提薩埵 依般若波羅蜜多故 心無罣礙 無罣礙故 無有恐怖 遠離顛倒夢想 究竟涅槃<br>
+            三世諸佛 依般若波羅蜜多故 得阿耨多羅三藐三菩提<br>
+            故知般若波羅蜜多 是大神咒 是大明咒 是無上咒 是無等等咒 能除一切苦 真實不虛<br>
+            故說般若波羅蜜多咒 即說咒曰 揭諦揭諦 波羅揭諦 波羅僧揭諦 菩提娑婆訶
+          </div>
+        </div>
+
+        <details open>
+          <summary>1) 觀自在菩薩 行深般若波羅蜜多時 — 관자재보살이 깊은 반야바라밀다를 행할 때</summary>
+          <div class="detail-body">
+            <p class="han-line">觀自在菩薩 行深般若波羅蜜多時</p>
+            <div class="pill-row"><span class="pill">관찰</span><span class="pill">깊은 지혜</span><span class="pill">수행</span></div>
+            <p><strong>쉬운 풀이:</strong> 관자재보살이 얕은 생각이 아니라 깊은 지혜의 수행 속에서 세상과 자신을 비추어 보았습니다.</p>
+            <p><strong>핵심 뜻:</strong> 반야심경은 정보 전달이 아니라 수행의 기록입니다. “행行”은 알고 끝나는 것이 아니라 몸과 마음으로 익히는 것을 뜻합니다.</p>
+            <p><strong>현대 적용:</strong> 스트레스가 생겼을 때 “왜 이런 일이 생겼지?”만 묻지 말고, “지금 몸의 감각은 어떠한가, 어떤 생각을 절대화하고 있는가?”를 관찰합니다.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>2) 照見五蘊皆空 度一切苦厄 — 오온이 공함을 비추어 보고 고통을 건넘</summary>
+          <div class="detail-body">
+            <p class="han-line">照見五蘊皆空 度一切苦厄</p>
+            <div class="pill-row"><span class="pill">오온</span><span class="pill">공</span><span class="pill">고통에서 건넘</span></div>
+            <p><strong>쉬운 풀이:</strong> 몸과 마음을 이루는 다섯 요소가 모두 고정된 실체가 아님을 보고, 괴로움의 바다를 건넙니다.</p>
+            <p><strong>핵심 뜻:</strong> 고통은 “내가 있다”는 사실 자체에서 생기기보다, 변하는 것을 “변하지 않는 나와 내 것”으로 붙잡을 때 생깁니다.</p>
+            <p><strong>현대 적용:</strong> “나는 실패자야”라는 생각이 떠오르면, 그것은 오온 중 “상想”과 “행行”의 작용입니다. 그것을 영원한 자아로 굳히지 않는 순간, 고통은 이미 조금 약해집니다.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>3) 色不異空 空不異色 色即是空 空即是色 — 색즉시공 공즉시색</summary>
+          <div class="detail-body">
+            <p class="han-line">色不異空 空不異色 色即是空 空即是色</p>
+            <div class="pill-row"><span class="pill">색</span><span class="pill">공</span><span class="pill">현상과 본성</span></div>
+            <p><strong>쉬운 풀이:</strong> 물질적 형상은 공과 따로 있지 않고, 공도 물질적 형상과 따로 있지 않습니다. 형상이 바로 공이고, 공이 바로 형상입니다.</p>
+            <p><strong>핵심 뜻:</strong> 색色은 성적 욕망이 아니라 몸과 물질, 형상을 뜻합니다. “색즉시공”은 물질이 사라진다는 말이 아니라, 물질이 독립적 본질 없이 조건 속에서 성립한다는 말입니다.</p>
+            <p><strong>오해 주의:</strong> “어차피 공이니 현실은 중요하지 않다”가 아닙니다. 공이기 때문에 모든 것은 서로 영향을 주고받으며, 그래서 말과 행동의 책임은 더 중요해집니다.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>4) 受想行識 亦復如是 — 느낌·생각·의지·의식도 그러하다</summary>
+          <div class="detail-body">
+            <p class="han-line">受想行識 亦復如是</p>
+            <div class="pill-row"><span class="pill">감정</span><span class="pill">인식</span><span class="pill">습관</span><span class="pill">의식</span></div>
+            <p><strong>쉬운 풀이:</strong> 물질만 공한 것이 아니라, 느낌·지각·습관적 반응·의식도 모두 공합니다.</p>
+            <p><strong>핵심 뜻:</strong> 우리는 감정을 “나”라고 착각합니다. 그러나 감정은 몸 상태, 기억, 관계, 말 한마디, 수면, 호르몬, 문화, 습관이 함께 만든 결과입니다.</p>
+            <p><strong>현대 적용:</strong> 분노가 올라오면 “내가 화다”가 아니라 “화라는 조건 지어진 현상이 일어났다”고 봅니다. 이 작은 언어 변화가 반응과 선택 사이의 공간을 만듭니다.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>5) 是諸法空相 不生不滅 不垢不淨 不增不減 — 모든 법의 공한 모습</summary>
+          <div class="detail-body">
+            <p class="han-line">是諸法空相 不生不滅 不垢不淨 不增不減</p>
+            <div class="pill-row"><span class="pill">공상</span><span class="pill">비이원</span><span class="pill">대립 초월</span></div>
+            <p><strong>쉬운 풀이:</strong> 모든 현상의 공한 모습은 절대적으로 태어나지도 사라지지도 않으며, 더럽지도 깨끗하지도 않고, 늘지도 줄지도 않습니다.</p>
+            <p><strong>핵심 뜻:</strong> 이것은 일상 차원의 변화가 없다는 말이 아닙니다. 일상에서는 태어남과 죽음, 깨끗함과 더러움, 증가와 감소가 있습니다. 다만 궁극의 관점에서는 그것들이 독립적 실체로 굳어 있지 않습니다.</p>
+            <p><strong>현대 적용:</strong> 우리는 “성공한 나/실패한 나”, “순수한 나/망가진 나” 같은 낙인을 붙입니다. 공의 지혜는 이 낙인이 실체가 아니라는 것을 보여 줍니다.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>6) 空中無色 無受想行識 — 공 가운데 오온이 없다?</summary>
+          <div class="detail-body">
+            <p class="han-line">是故空中 無色 無受想行識</p>
+            <div class="pill-row"><span class="pill">무無</span><span class="pill">무자성</span><span class="pill">허무주의 주의</span></div>
+            <p><strong>쉬운 풀이:</strong> 공의 관점에서 보면, 물질·느낌·생각·의지·의식은 독립적 실체로 존재하지 않습니다.</p>
+            <p><strong>핵심 뜻:</strong> 여기서 “없다”는 “아예 존재하지 않는다”가 아닙니다. “스스로 독립해 존재하는 본질로는 없다”는 뜻입니다.</p>
+            <p><strong>비유:</strong> 무지개는 보입니다. 그러나 물방울, 빛, 보는 위치가 함께 만들어 낸 현상이지, 손에 잡히는 독립 물체는 아닙니다. 오온도 이와 비슷하게 조건 속에서 드러납니다.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>7) 無眼耳鼻舌身意 無色聲香味觸法 — 감각 세계의 범주도 실체화하지 않음</summary>
+          <div class="detail-body">
+            <p class="han-line">無眼耳鼻舌身意 無色聲香味觸法</p>
+            <div class="pill-row"><span class="pill">육근</span><span class="pill">육경</span><span class="pill">경험의 구조</span></div>
+            <p><strong>쉬운 풀이:</strong> 눈·귀·코·혀·몸·뜻, 그리고 빛깔·소리·냄새·맛·감촉·생각의 대상도 독립된 실체로 붙잡을 수 없습니다.</p>
+            <p><strong>핵심 뜻:</strong> 우리가 경험하는 세계는 감각기관, 대상, 의식, 기억, 언어, 문화가 함께 만든 장입니다. “내가 본 것이 전부”라고 믿는 것은 어리석음의 시작입니다.</p>
+            <p><strong>현대 적용:</strong> 같은 메시지를 보고도 한 사람은 공격으로, 다른 사람은 농담으로 받아들입니다. 경험은 대상 하나만으로 결정되지 않습니다. 조건을 보아야 갈등이 줄어듭니다.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>8) 無無明 亦無無明盡 ... 無老死 亦無老死盡 — 십이연기도 실체가 아니다</summary>
+          <div class="detail-body">
+            <p class="han-line">無無明 亦無無明盡 乃至 無老死 亦無老死盡</p>
+            <div class="pill-row"><span class="pill">십이연기</span><span class="pill">무명</span><span class="pill">노사</span></div>
+            <p><strong>쉬운 풀이:</strong> 무명도, 무명이 끝나는 것도, 늙고 죽는 것도, 늙고 죽음이 끝나는 것도 고정된 실체로는 없습니다.</p>
+            <p><strong>핵심 뜻:</strong> 십이연기는 고통이 조건 따라 일어나는 과정을 설명합니다. 반야심경은 그 설명마저 절대화하지 말라고 말합니다. 교리는 길을 안내하는 지도이지, 붙잡아야 할 성벽이 아닙니다.</p>
+            <p><strong>현대 적용:</strong> 심리학, 종교, 철학, 과학의 설명은 우리를 돕지만, 설명이 곧 현실 전체는 아닙니다. 좋은 설명일수록 집착이 아니라 자유를 낳아야 합니다.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>9) 無苦集滅道 無智亦無得 — 사성제와 지혜도 없다?</summary>
+          <div class="detail-body">
+            <p class="han-line">無苦集滅道 無智亦無得</p>
+            <div class="pill-row"><span class="pill">사성제</span><span class="pill">지혜</span><span class="pill">얻음 없음</span></div>
+            <p><strong>쉬운 풀이:</strong> 괴로움·괴로움의 원인·괴로움의 소멸·소멸의 길도, 지혜도, 얻을 것도 독립적 실체로는 없습니다.</p>
+            <p><strong>핵심 뜻:</strong> 이것은 사성제를 부정하는 것이 아닙니다. 오히려 사성제를 “내가 가진 절대 교리”로 굳히지 말라는 깊은 가르침입니다. 궁극의 지혜는 지혜라는 이름에도 매이지 않습니다.</p>
+            <p><strong>현대 적용:</strong> “나는 수행을 많이 했어”, “나는 깨달았어”라는 생각이 새 자아가 되는 순간, 수행은 다시 집착이 됩니다. 반야는 수행의 성과마저 내려놓게 합니다.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>10) 以無所得故 ... 心無罣礙 無有恐怖 — 얻을 것이 없으므로 두려움이 없다</summary>
+          <div class="detail-body">
+            <p class="han-line">以無所得故 菩提薩埵 依般若波羅蜜多故 心無罣礙 無罣礙故 無有恐怖</p>
+            <div class="pill-row"><span class="pill">무소득</span><span class="pill">마음의 걸림 없음</span><span class="pill">두려움 없음</span></div>
+            <p><strong>쉬운 풀이:</strong> 얻을 것이 따로 없음을 알기에 보살은 반야바라밀다에 의지하고, 마음에 걸림이 없으며, 걸림이 없으므로 두려움이 없습니다.</p>
+            <p><strong>핵심 뜻:</strong> 우리가 두려워하는 것은 대개 “잃을 나”, “망가질 이미지”, “반드시 가져야 할 결과”입니다. 무소득은 포기가 아니라, 집착 없는 온전한 행위입니다.</p>
+            <p><strong>현대 적용:</strong> 면접, 시험, 사업, 관계에서 최선을 다하되 결과를 나의 전부로 만들지 않는 태도입니다. 그때 행동은 더 맑아지고 두려움은 줄어듭니다.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>11) 遠離顛倒夢想 究竟涅槃 — 뒤바뀐 꿈에서 벗어나 열반에 이름</summary>
+          <div class="detail-body">
+            <p class="han-line">遠離顛倒夢想 究竟涅槃</p>
+            <div class="pill-row"><span class="pill">전도몽상</span><span class="pill">열반</span><span class="pill">평화</span></div>
+            <p><strong>쉬운 풀이:</strong> 거꾸로 된 생각과 꿈같은 착각을 멀리 떠나, 궁극의 평화에 이릅니다.</p>
+            <p><strong>핵심 뜻:</strong> 전도顛倒는 뒤집힌 인식입니다. 무상한 것을 영원하다고, 괴로운 것을 행복이라고, 무아인 것을 자아라고, 부정한 것을 순수한 실체라고 보는 착각입니다.</p>
+            <p><strong>현대 적용:</strong> 광고와 알고리즘은 “더 사면 완전해진다”, “더 인정받으면 안전해진다”고 말합니다. 반야심경은 그 약속이 꿈같은 투사임을 보게 합니다.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>12) 揭諦揭諦 波羅揭諦 波羅僧揭諦 菩提娑婆訶 — 아제 아제 바라아제...</summary>
+          <div class="detail-body">
+            <p class="han-line">揭諦揭諦 波羅揭諦 波羅僧揭諦 菩提娑婆訶</p>
+            <div class="pill-row"><span class="pill">진언</span><span class="pill">건너감</span><span class="pill">체험</span></div>
+            <p><strong>쉬운 풀이:</strong> “가라, 가라, 저 언덕으로 가라, 함께 완전히 저 언덕으로 가라, 깨달음이여, 이루어지소서.”</p>
+            <p><strong>핵심 뜻:</strong> 진언은 논리를 넘어 몸과 마음 전체로 지혜를 익히는 장치입니다. “간다”는 말은 장소 이동이 아니라, 집착의 방식에서 지혜의 방식으로 건너감을 뜻합니다.</p>
+            <p><strong>현대 적용:</strong> 이해만으로 끝내지 말고, 숨 쉬고 걷고 말하고 관계 맺는 자리에서 반야를 실천하라는 초대입니다.</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="doctrine">
+        <h2>5. 불자들이 꼭 알아야 할 핵심 교리</h2>
+        <h3>5-1. 오온: “나”라고 부르는 경험의 다섯 묶음</h3>
+        <table>
+          <thead><tr><th>오온</th><th>뜻</th><th>현대적 예</th><th>수행 포인트</th></tr></thead>
+          <tbody>
+            <tr><td><strong>색色</strong></td><td>몸과 물질적 형상</td><td>건강, 외모, 집, 스마트폰, 직장 환경</td><td>몸은 나의 소중한 조건이지만, 영원한 “나 자체”는 아닙니다.</td></tr>
+            <tr><td><strong>수受</strong></td><td>즐거움·괴로움·무덤덤함의 느낌</td><td>칭찬받을 때의 기쁨, 비난받을 때의 쓰라림</td><td>느낌은 빠르게 생기고 사라집니다. 느낌 뒤의 충동을 바로 믿지 않습니다.</td></tr>
+            <tr><td><strong>상想</strong></td><td>이름 붙임, 기억, 해석</td><td>“저 사람은 나를 싫어해”, “나는 부족해” 같은 판단</td><td>생각은 현실을 돕는 지도이지만, 지도는 땅 자체가 아닙니다.</td></tr>
+            <tr><td><strong>행行</strong></td><td>의지, 습관, 감정 반응, 심리적 형성력</td><td>방어적 말투, 미루기, 인정 욕구, 비교 습관</td><td>습관은 조건 지어진 것이므로 다시 훈련될 수 있습니다.</td></tr>
+            <tr><td><strong>식識</strong></td><td>대상을 아는 의식</td><td>보는 의식, 듣는 의식, 생각을 아는 의식</td><td>의식도 대상과 조건에 의존합니다. “순수한 소유자”로 붙잡지 않습니다.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>5-2. 공空·연기緣起·무아無我·무상無常의 관계</h3>
+        <div class="grid-4">
+          <div class="card"><h4>무상</h4><p>모든 조건 지어진 것은 변합니다. 감정, 몸, 관계, 사회, 생각 모두 흐릅니다.</p></div>
+          <div class="card"><h4>무아</h4><p>변하는 요소들 속에서 영원하고 독립적인 자아를 찾을 수 없습니다.</p></div>
+          <div class="card"><h4>연기</h4><p>모든 것은 원인과 조건에 의해 함께 일어납니다. 홀로 존재하는 것은 없습니다.</p></div>
+          <div class="card"><h4>공</h4><p>무상·무아·연기의 관점에서 볼 때, 모든 것은 고정된 자성을 갖지 않습니다.</p></div>
+        </div>
+        <div class="quote">공을 제대로 이해하면 세계가 사라지는 것이 아니라, 세계가 더 섬세하게 보입니다. 나무 한 그루는 흙, 물, 햇빛, 미생물, 계절, 사람의 돌봄, 시간의 흐름이 함께 드러난 모습입니다. 이것이 공의 따뜻한 얼굴입니다.</div>
+
+        <h3>5-3. 두 진리: 세속제와 승의제</h3>
+        <table>
+          <thead><tr><th>구분</th><th>뜻</th><th>예</th><th>오해 방지</th></tr></thead>
+          <tbody>
+            <tr><td><strong>세속제</strong></td><td>일상에서 작동하는 상대적 진리</td><td>약속 시간, 윤리, 원인과 결과, 병원 치료, 가족 관계</td><td>공을 알았다고 일상의 책임이 사라지는 것은 아닙니다.</td></tr>
+            <tr><td><strong>승의제</strong></td><td>궁극에서 볼 때 모든 것이 무자성임을 보는 진리</td><td>“나”, “성공”, “소유”, “교리”도 고정 실체가 아님</td><td>승의제를 핑계로 세속의 고통을 무시하면 자비를 잃습니다.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>5-4. 중도: 있다/없다의 양극단을 넘는 길</h3>
+        <p>반야심경의 공은 “모든 것이 진짜로 단단히 있다”는 상견常見과 “아무것도 없으니 의미도 책임도 없다”는 단견斷見을 함께 넘어섭니다. 공은 존재를 지우는 말이 아니라, 존재가 <strong>조건적·관계적·가변적</strong>이라는 사실을 가리키는 말입니다.</p>
+      </section>
+
+      <section id="buddha-message" class="alt">
+        <h2>6. 부처님이 전달하고자 한 내용</h2>
+        <p>반야심경은 대승불교의 짧은 경전이지만, 그 중심에는 부처님 가르침의 오래된 핵심이 있습니다. 그것은 “괴로움의 원인을 보고, 괴로움에서 자유로워지라”는 메시지입니다.</p>
+        <div class="grid-2">
+          <div class="card"><span class="tag">메시지 1</span><h3>나를 고정된 실체로 만들지 말라</h3><p>우리는 “나는 이런 사람이다”, “나는 반드시 인정받아야 한다”, “내 생각이 옳다”는 견고한 자기상을 만듭니다. 부처님의 메시지는 이 자기상이 조건 지어진 구성물임을 보라는 것입니다.</p></div>
+          <div class="card"><span class="tag">메시지 2</span><h3>가르침마저 집착하지 말라</h3><p>무고집멸도, 무지역무득은 법을 부정하는 말이 아니라 법에 대한 집착을 부수는 말입니다. 진리는 소유물이 아니라 건너는 배입니다.</p></div>
+          <div class="card"><span class="tag">메시지 3</span><h3>두려움의 뿌리를 보라</h3><p>두려움은 대개 “잃을 것”, “지켜야 할 나”, “통제해야 할 미래”에 대한 집착에서 자랍니다. 무소득을 이해하면 마음의 걸림이 줄어듭니다.</p></div>
+          <div class="card"><span class="tag">메시지 4</span><h3>공은 자비를 낳는다</h3><p>나와 남이 완전히 분리된 독립 실체가 아니라면, 타인의 괴로움은 나와 무관하지 않습니다. 공의 지혜는 차가운 무관심이 아니라 따뜻한 책임감으로 이어집니다.</p></div>
+        </div>
+      </section>
+
+      <section id="modern-life">
+        <h2>7. 현대 삶에 대한 해석</h2>
+        <p class="muted">현대인은 옛사람보다 더 많은 정보, 비교, 선택, 불안 속에 삽니다. 반야심경은 이 시대의 마음병에도 강력한 지혜를 제공합니다.</p>
+        <div class="grid-2">
+          <div class="card"><h3>1. SNS와 자아 이미지</h3><p><strong>문제:</strong> 우리는 프로필, 팔로워, 좋아요, 사진 속 모습을 “나”라고 착각합니다.</p><p><strong>반야의 해석:</strong> 그것은 색·수·상·행·식이 플랫폼 조건과 만난 임시적 이미지입니다. 나의 전부가 아닙니다.</p><p><strong>실천:</strong> 반응을 확인하기 전 세 번 숨 쉬고, “이 숫자가 내 본질인가?”라고 물어봅니다.</p></div>
+          <div class="card"><h3>2. 직업과 성취 강박</h3><p><strong>문제:</strong> 직함과 성과를 잃으면 나도 무너진다고 느낍니다.</p><p><strong>반야의 해석:</strong> 직업은 나를 설명하는 조건 중 하나이지, 변하지 않는 자아가 아닙니다.</p><p><strong>실천:</strong> “나는 실패했다”를 “실패라는 사건과 감정이 일어났다”로 바꾸어 말합니다.</p></div>
+          <div class="card"><h3>3. 관계 갈등</h3><p><strong>문제:</strong> “저 사람은 원래 그래”라고 규정하면 분노와 혐오가 굳어집니다.</p><p><strong>반야의 해석:</strong> 사람의 행동은 성장 배경, 두려움, 습관, 상황, 말투, 피로 등 수많은 조건의 결과입니다.</p><p><strong>실천:</strong> 상대를 용서하기 전에 먼저 “조건을 보자”고 마음먹습니다. 조건을 보는 것이 자비의 시작입니다.</p></div>
+          <div class="card"><h3>4. 불안과 통제 욕구</h3><p><strong>문제:</strong> 미래를 완전히 통제하려는 마음이 더 큰 불안을 만듭니다.</p><p><strong>반야의 해석:</strong> 미래는 수많은 조건의 장입니다. 내가 할 수 있는 조건을 돌보되, 모든 결과를 소유할 수는 없습니다.</p><p><strong>실천:</strong> 오늘 할 수 있는 선한 조건 세 가지를 적고, 결과에 대한 집착은 숨과 함께 내려놓습니다.</p></div>
+          <div class="card"><h3>5. 죽음과 상실</h3><p><strong>문제:</strong> 모든 상실을 절대적 단절로만 보면 공포가 커집니다.</p><p><strong>반야의 해석:</strong> 불생불멸은 육체가 죽지 않는다는 말이 아니라, 모든 존재가 조건의 흐름 속에서 드러나고 사라진다는 통찰입니다.</p><p><strong>실천:</strong> 상실을 부정하지 말고 애도하되, 사랑이 남긴 조건과 영향이 계속 이어짐을 봅니다.</p></div>
+          <div class="card"><h3>6. AI와 알고리즘 시대</h3><p><strong>문제:</strong> 알고리즘은 우리의 욕망과 분노를 강화해 “내 생각”처럼 느끼게 만들 수 있습니다.</p><p><strong>반야의 해석:</strong> 생각도 조건 지어진 흐름입니다. 내가 소비한 정보, 플랫폼 설계, 피로, 집단 정서가 함께 생각을 만듭니다.</p><p><strong>실천:</strong> 강한 확신이 들수록 “이 생각을 만든 조건은 무엇인가?”를 묻습니다.</p></div>
+        </div>
+      </section>
+
+      <section id="physics" class="alt">
+        <h2>8. 최신 물리학·양자역학과의 흥미로운 비교</h2>
+        <div class="notice">
+          <strong>중요한 경계:</strong> 양자역학이 반야심경을 “증명”하는 것은 아닙니다. 불교의 공은 수행과 해탈의 언어이고, 물리학은 수학적 모델과 실험 검증의 언어입니다. 둘을 동일시하면 사이비 해석이 됩니다. 다만 현대 물리학의 몇몇 개념은 “고정된 실체로 세계를 보는 습관”을 흔드는 좋은 비유가 될 수 있습니다.
+        </div>
+        <table>
+          <thead><tr><th>과학 개념</th><th>과학적으로 조심스럽게 말하면</th><th>반야심경과의 비유</th><th>하면 안 되는 오해</th></tr></thead>
+          <tbody>
+            <tr><td><strong>불확정성 원리</strong></td><td>입자의 위치와 운동량처럼 특정 물리량은 동시에 임의로 정확하게 정할 수 없습니다.</td><td>세계가 우리가 바라는 방식처럼 완전히 고정·통제 가능한 대상이 아니라는 점을 떠올리게 합니다.</td><td>“마음먹으면 현실이 마음대로 바뀐다”는 뜻이 아닙니다.</td></tr>
+            <tr><td><strong>양자 얽힘</strong></td><td>얽힌 양자 상태에서는 멀리 떨어진 입자들의 측정 결과가 깊은 상관관계를 보입니다.</td><td>존재를 고립된 알갱이보다 관계의 장으로 보는 관점을 떠올리게 합니다.</td><td>인간관계, 운명, 업이 물리적 얽힘으로 설명된다는 뜻이 아닙니다.</td></tr>
+            <tr><td><strong>측정 문제와 해석 논쟁</strong></td><td>양자 이론은 실험 결과를 매우 잘 예측하지만, 그 해석에 대해서는 여러 견해가 있습니다.</td><td>“우리가 보는 세계”가 조건·방법·관점과 무관하게 주어지는 것이 아니라는 점을 생각하게 합니다.</td><td>관찰자가 반드시 인간 의식이라는 뜻이 아닙니다. 물리학의 관찰은 실험적 상호작용입니다.</td></tr>
+            <tr><td><strong>거시적 양자 현상</strong></td><td>2025년 노벨 물리학상은 전기 회로에서 거시적 양자 터널링과 에너지 양자화를 보인 실험을 기렸습니다.</td><td>직관적으로 “큰 것은 고전적, 작은 것은 양자적”이라고 나누던 경계가 더 섬세함을 보여 줍니다.</td><td>공이 물리적 진공이나 양자장이라는 뜻은 아닙니다.</td></tr>
+            <tr><td><strong>창발과 시스템</strong></td><td>복잡한 시스템에서는 부분만으로 환원하기 어려운 성질이 관계 속에서 나타납니다.</td><td>“나”도 몸, 기억, 언어, 관계, 사회, 생태계가 함께 만든 과정으로 이해할 수 있습니다.</td><td>과학 개념을 곧바로 불교 교리의 증거로 삼으면 안 됩니다.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>가장 안전한 연결 방식</h3>
+        <div class="grid-3">
+          <div class="card"><span class="tag blue">비유</span><h4>관계성</h4><p>양자 얽힘은 물리계의 관계성이 얼마나 깊을 수 있는지 보여 주는 사례입니다. 반야심경의 연기와 공도 “고립된 실체”라는 상식을 흔듭니다.</p></div>
+          <div class="card"><span class="tag blue">비유</span><h4>통제의 한계</h4><p>불확정성 원리는 자연을 완전히 직관적·기계적으로 붙잡으려는 욕망에 한계를 보여 줍니다. 반야심경은 마음의 차원에서 같은 집착을 다룹니다.</p></div>
+          <div class="card"><span class="tag red">주의</span><h4>동일시 금지</h4><p>공은 수행적 통찰이고, 양자역학은 실험과 수학의 이론입니다. 둘 사이에는 영감 어린 대화가 가능하지만, 단순 등식은 위험합니다.</p></div>
+        </div>
+      </section>
+
+      <section id="practice">
+        <h2>9. 반야심경을 삶에서 익히는 실천법</h2>
+        <h3>9-1. 3분 실천: 감정이 올라올 때</h3>
+        <div class="grid-3">
+          <div class="card"><h4>1분: 멈춤</h4><p>몸의 감각을 느낍니다. 가슴, 목, 배, 어깨에 어떤 긴장이 있는지 봅니다.</p></div>
+          <div class="card"><h4>2분: 오온 분해</h4><p>“감각은 색, 불쾌함은 수, 해석은 상, 반응하려는 충동은 행, 알아차림은 식”이라고 조용히 확인합니다.</p></div>
+          <div class="card"><h4>3분: 공의 관찰</h4><p>“이 감정은 조건 따라 생겼고 조건 따라 변한다. 이것이 나의 전부는 아니다.”라고 마음속으로 말합니다.</p></div>
+        </div>
+
+        <h3>9-2. 7일 학습 계획</h3>
+        <div class="practice grid-2">
+          <div class="card day"><h4>제목 읽기</h4><p>마하·반야·바라밀다·심·경의 뜻을 익힙니다. “지혜로 건너가는 핵심 가르침”이라는 제목을 마음에 둡니다.</p></div>
+          <div class="card day"><h4>오온 관찰</h4><p>하루 동안 강한 감정이 생긴 순간을 하나 기록하고, 색·수·상·행·식으로 나누어 봅니다.</p></div>
+          <div class="card day"><h4>색즉시공</h4><p>내가 단단히 붙잡는 하나의 대상, 예를 들어 돈·직함·평판이 어떤 조건으로 이루어졌는지 적어 봅니다.</p></div>
+          <div class="card day"><h4>무無의 뜻</h4><p>“없다”를 “독립된 실체로는 없다”로 바꾸어 읽는 연습을 합니다.</p></div>
+          <div class="card day"><h4>무소득</h4><p>오늘 할 일을 정성껏 하되, 결과를 자아의 가치로 만들지 않는 연습을 합니다.</p></div>
+          <div class="card day"><h4>자비 실천</h4><p>불편한 사람 한 명을 떠올리고, 그 사람의 행동을 만든 조건을 가능한 한 넓게 상상합니다.</p></div>
+          <div class="card day"><h4>진언과 회향</h4><p>아제 아제 바라아제를 천천히 세 번 독송하고, 오늘의 작은 지혜가 나와 타인의 평화에 쓰이기를 발원합니다.</p></div>
+        </div>
+
+        <h3>9-3. 독송할 때의 마음가짐</h3>
+        <div class="callout">반야심경 독송은 소원을 비는 행위로만 좁혀서는 안 됩니다. 한 글자 한 글자가 “내가 붙잡는 실체가 어디 있는가?”를 묻는 수행입니다. 독송 뒤에는 반드시 삶의 한 장면에 적용해 보아야 합니다.</div>
+      </section>
+
+      <section id="faq" class="alt">
+        <h2>10. 자주 하는 질문</h2>
+        <details open><summary>공이면 사랑, 윤리, 책임도 의미 없나요?</summary><div class="detail-body"><p>아닙니다. 공은 모든 것이 서로 의존한다는 뜻이므로, 오히려 말과 행동의 영향이 더 중요해집니다. 내가 던진 말 한마디가 다른 사람의 마음 조건이 되고, 사회의 분위기가 되며, 다시 나에게 돌아옵니다.</p></div></details>
+        <details><summary>무아라면 나는 존재하지 않는 건가요?</summary><div class="detail-body"><p>일상적 의미의 나는 존재합니다. 밥을 먹고, 일하고, 아프고, 사랑합니다. 다만 영원하고 독립적이며 변하지 않는 핵심 자아는 찾을 수 없다는 뜻입니다.</p></div></details>
+        <details><summary>무고집멸도는 사성제를 부정하나요?</summary><div class="detail-body"><p>세속의 수행 길에서는 사성제가 매우 중요합니다. 반야심경의 “무고집멸도”는 궁극의 관점에서 사성제마저 독립 실체로 붙잡지 말라는 뜻입니다. 가르침을 부정하는 것이 아니라, 가르침에 대한 집착을 내려놓는 것입니다.</p></div></details>
+        <details><summary>양자역학이 불교를 증명하나요?</summary><div class="detail-body"><p>그렇지 않습니다. 양자역학은 물리 현상을 수학적으로 설명하고 예측하는 과학 이론입니다. 불교는 괴로움의 원인을 보고 해탈로 나아가는 수행 전통입니다. 둘은 흥미롭게 대화할 수 있지만 서로를 증명하는 관계로 단순화하면 안 됩니다.</p></div></details>
+        <details><summary>초심자는 무엇부터 공부해야 하나요?</summary><div class="detail-body"><p>먼저 오온과 공의 뜻을 익히고, “무無는 완전한 부정이 아니라 무자성의 뜻”이라는 점을 확실히 잡으십시오. 그다음 색즉시공과 무소득을 일상 감정에 적용해 보십시오.</p></div></details>
+      </section>
+
+      <section id="review">
+        <h2>11. 스님·전문가 검수용 체크리스트</h2>
+        <p>법회 배포, 유튜브 대본, 책자, 강의 자료로 쓰려면 아래 항목을 기준으로 최종 검토를 받는 것이 좋습니다.</p>
+        <table>
+          <thead><tr><th>검수 항목</th><th>확인 질문</th><th>주의점</th></tr></thead>
+          <tbody>
+            <tr><td>교리 정확성</td><td>공을 허무주의가 아니라 무자성·연기로 설명했는가?</td><td>“공=아무것도 없음”이라는 표현을 피합니다.</td></tr>
+            <tr><td>종단 적합성</td><td>사용할 한글 번역과 독송 형식이 소속 종단의 표준과 맞는가?</td><td>법회용이라면 종단 표준의례 문안을 확인합니다.</td></tr>
+            <tr><td>학술 균형</td><td>중관·대승 해석을 특정 종파 해석만으로 단정하지 않았는가?</td><td>필요하면 천태·화엄·선·티베트 불교 해석 차이를 별도 보충합니다.</td></tr>
+            <tr><td>현대 적용</td><td>공을 책임 회피나 감정 억압으로 오해하지 않게 했는가?</td><td>자비와 윤리, 세속의 책임을 함께 강조합니다.</td></tr>
+            <tr><td>과학 비유</td><td>양자역학을 불교의 증거처럼 과장하지 않았는가?</td><td>비유와 동일시를 명확히 구분합니다.</td></tr>
+            <tr><td>대중성</td><td>초심자가 어려운 용어를 이해할 수 있게 풀었는가?</td><td>한자·산스크리트어는 반드시 쉬운 예와 함께 설명합니다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sources" class="alt">
+        <h2>12. 참고 자료와 근거</h2>
+        <p>아래 자료를 바탕으로 전통 해석, 한문 원문, 현대 학술 설명, 물리학 비유의 경계를 정리했습니다.</p>
+        <ol class="source-list">
+          <li><strong>84000 Reading Room, “The Heart of the Perfection of Wisdom, the Blessed Mother.”</strong> 2025년 현재판. 반야심경의 긴 판본 구조, 관자재보살·사리자·부처님의 역할, 오온과 공 설명을 참고했습니다. <a href="https://84000.co/translation/toh21">https://84000.co/translation/toh21</a></li>
+          <li><strong>동국대학교 정각원, “예불법회의식_반야심경.”</strong> 널리 독송되는 한문·한글 반야심경 문안을 확인했습니다. <a href="https://jeonggakwon.dongguk.ac.kr/HOME/jeonggakwon/sub.htm?mode=view&mv_data=aWR4PTIxJnN0YXJ0UGFnZT00MCZsaXN0Tm89MyZ0YWJsZT1leF9iYnNfZGF0YV9qZW9uZ2dha3dvbiZuYXZfY29kZT1qZW8xNTg1MzA4OTE5JmNvZGU9eTlNYjB6Q3N6NTAwJnNlYXJjaF9pdGVtPSZzZWFyY2hfb3JkZXI9Jm9yZGVyX2xpc3Q9Jmxpc3Rfc2NhbGU9JnZpZXdfbGV2ZWw9JnZpZXdfY2F0ZT0mdmlld19jYXRlMj0%3D">동국대학교 정각원 자료</a></li>
+          <li><strong>Stanford Encyclopedia of Philosophy, “Madhyamaka.”</strong> 중관의 공, 무자성, 중도, 두 진리 설명을 참고했습니다. <a href="https://plato.stanford.edu/entries/madhyamaka/">https://plato.stanford.edu/entries/madhyamaka/</a></li>
+          <li><strong>His Holiness the Dalai Lama, “Teaching About Emptiness and Dependent Arising.”</strong> 색즉시공을 연기와 무자성으로 해석하는 법문을 참고했습니다. <a href="https://www.dalailama.com/news/2014/teaching-about-emptiness-and-dependent-arising-at-likir-ladakh">dalailama.com 자료</a></li>
+          <li><strong>Plum Village, Thich Nhat Hanh’s new Heart Sutra translation note.</strong> 공을 존재/비존재의 극단으로 오해하지 말라는 설명을 참고했습니다. <a href="https://plumvillage.org/about/thich-nhat-hanh/letters/thich-nhat-hanh-new-heart-sutra-translation">plumvillage.org 자료</a></li>
+          <li><strong>NobelPrize.org, Nobel Prize in Physics 2022 press release.</strong> 양자 얽힘과 벨 부등식, 양자정보과학에 대한 근거 자료로 참고했습니다. <a href="https://www.nobelprize.org/prizes/physics/2022/press-release/">nobelprize.org 2022 Physics</a></li>
+          <li><strong>NobelPrize.org, Nobel Prize in Physics 2025 press release and popular information.</strong> 거시적 양자 터널링과 전기 회로의 에너지 양자화 관련 최신 사례로 참고했습니다. <a href="https://www.nobelprize.org/prizes/physics/2025/press-release/">nobelprize.org 2025 Physics</a></li>
+          <li><strong>Encyclopaedia Britannica, “Uncertainty principle.”</strong> 불확정성 원리의 기본 정의와 한계를 확인했습니다. <a href="https://www.britannica.com/science/uncertainty-principle">britannica.com</a></li>
+          <li><strong>Stanford Encyclopedia of Philosophy, “Philosophical Issues in Quantum Theory.”</strong> 양자 이론의 해석 문제와 측정 문제를 과장하지 않기 위해 참고했습니다. <a href="https://plato.stanford.edu/entries/qt-issues/">https://plato.stanford.edu/entries/qt-issues/</a></li>
+        </ol>
+        <p class="footnote">주의: 본 문서는 교육적 설명을 위한 통합 해설입니다. 특정 종단의 공식 교재, 법문, 출판물로 사용하려면 해당 종단·사찰·지도법사의 최종 검토를 받으십시오.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <p>반야심경 현대 해설 HTML · 원뜻과 현대적 해석을 구분한 교육용 자료</p>
+      <p class="small">공은 세계를 지우는 말이 아니라, 세계를 더 정확하고 자비롭게 보게 하는 지혜입니다.</p>
+    </div>
+  </footer>
+
+  <script>
+    function openAllDetails(open) {
+      document.querySelectorAll('main details').forEach(function(detail) {
+        detail.open = open;
+      });
+    }
+  </script>
+</body>
+</html>
